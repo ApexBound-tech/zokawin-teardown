@@ -34,8 +34,8 @@ The site sits behind a custom bot-shield that returns a non-standard HTTP
 Because it is server-side, one `curl` finds it — no JavaScript needed. Check
 any domain:
 
-    curl -sI https://DOMAIN/ | grep -i '^cast-mode:'
-    curl -s -o /dev/null -w "%{http_code}\n" https://DOMAIN/verifyjs
+    curl -sI -m 10 https://DOMAIN/ | grep -i '^cast-mode:'
+    curl -s -m 10 -o /dev/null -w "%{http_code}\n" https://DOMAIN/verifyjs
 
 A hit on both = this platform.
 
